@@ -1,0 +1,79 @@
+<% include partials/header %>
+<h1>
+    Add New Pet
+</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <p>Name</p>
+            <p>Type:</p>
+            <p>Breed:</p>
+            <p>Location:</p>
+            <p>Latitude:</p>
+            <p>Longitude:</p>
+        </div>
+        
+        <div class="col-md-3">
+            <form action="https://pet-weather.herokuapp.com/new" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="name" placeholder="name"></input>
+                </div>
+                <div  class="form-group">
+                    
+                    <select class="type" name="type">
+                      <option value ="cat">cat</option>
+                      <option value ="dog">dog</option>
+                      <option value ="mouse">mouse</option>
+                      <option value ="other">other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="breed" name="breed">
+                      <option value='British Shorthair'>British Shorthair</option>
+                      <option value='Maine Coon'>Maine Coon</option>
+                      <option value='Persian'>Persian</option>
+                      <option value='Other'>Other</option>
+                    </select>
+                </div>
+                <div  class="form-group">
+                    <input class="form-control" type="text" name="location" placeholder="location"></input>
+                </div>
+                <div  class="form-group">
+                    <input class="form-control" type="text" name="latitude" placeholder="latitude"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="longitude" placeholder="longitude"></input>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-block">Add My Pet!</button>
+                </div>
+            </form>
+            <a href="/">Go Back</a>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+<style>
+    p{
+        text-align: right;
+        font-size: 24px;
+    }
+    h1{
+        margin-left: 5%;
+    }
+</style>
+<script>
+     $(".type").change(function () {
+        var val = $(this).val();
+        if (val == "cat") {
+            $(".breed").html("<option value='British Shorthair'>British Shorthair</option><option value='Maine Coon'>Maine Coon</option><option value='Persian'>Persian</option><option value='Other'>Other</option>");
+        } else if (val == "dog") {
+            $(".breed").html("<option value='Barbet'>Barbet</option><option value='Beagle'>Beagle</option><option value='Dachshund'>Dachshund</option><option value='Other'>Other</option>");
+        } else if (val == "mouse") {
+            $(".breed").html("<option value='House Mouse'>House Mouse</option><option value='Deer Mouse'>Deer Mouse</option><option value='Norway Rat'>Norway Rat</option><option value='Other'>Other</option>");
+        } else if (val == "other") {
+            $(".breed").html("<option value='Some'>Some</option><option value='What'>What</option><option value='How'>How</option><option value='Other'>Other</option>");
+        }
+    });
+</script>
+<% include partials/footer %>

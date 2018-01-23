@@ -1,0 +1,56 @@
+<% include partials/header %>
+<% var row = 0;%>
+<h1>
+  Does My Pet Need An Umbrella ?
+</h1>
+<h2>
+  Select a pet to figure out
+</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <table class="table table-bordered">
+        <thead>
+          <tr class="header">
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Breed</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% pets.forEach(function(pet, index){%>
+              <tr <%if(index%2==0){ %> class="dark" <%} if(index%2 != 0) {%> class="light"<% } %> >
+                <td><%= pet.name %></td>
+                <td><%= pet.type %></td>
+                <td><%= pet.breed %></td>
+                <td><a href="/pets/<%= pet.id %>"><u>view</u></a></td>
+              </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+<style>
+  h1{
+    text-align: center;
+  }
+  h2{
+    text-align: center;
+  }
+  .header{
+    background: grey;
+  }
+  .dark{
+    background: #d1d1e0;
+  }
+  .light{
+    background: #f0f0f5;
+  }
+</style>      
+
+<% include partials/footer %>

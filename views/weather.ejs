@@ -1,0 +1,40 @@
+<% include partials/header %>
+
+<div class="container topmargin">
+    <div class="row">
+        <div class="col-md-6">
+           <% if (umbrella.match("Need Umbrella") != null){ %>
+                <img src="http://www.giftideas.co.uk/media/catalog/product/cache/8/image/410x/9df78eab33525d08d6e5fb8d27136e95/d/o/dog-umbrella-1.jpg">
+            <% } %>
+            <% if (umbrella.match("Need Umbrella") == null){ %>
+                <img src="https://s7d1.scene7.com/is/image/PETCO/dog-category-090617-369w-269h-hero-cutout-d?fmt=png-alpha">
+            <% } %>
+        </div>
+        <div class="col-md-6">
+            <div class="text">
+                <% if (umbrella.match("Need Umbrella") != null){ %>
+                        <h1>YUP !</h1>
+                        <p>it looks like the pet is going to need one in location</p>
+                        <a href="/main"><u>Lookup a different pet</u></a>
+                    
+                <% } %>
+                <%if (umbrella.match("Need Umbrella") == null){ %>
+                    <h1>YUP !</h1>
+                    <p>it looks like the pet do not need one in location</p>
+                    <a href="/"><u>Lookup a different pet</u></a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .text{
+        text-align: center;
+    }
+    .topmargin{
+        margin-top: 10%;
+    }
+</style>
+
+<% include partials/footer %>

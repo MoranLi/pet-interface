@@ -1,0 +1,19 @@
+{
+  "name": "interface-pet",
+  "version": "1.0.0",
+  "description": "interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Yukun Li",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "forecast.io": "0.0.11",
+    "request": "^2.83.0",
+    "weather-js": "^2.0.0"
+  }
+}
